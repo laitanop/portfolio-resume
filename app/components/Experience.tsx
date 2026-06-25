@@ -16,7 +16,6 @@ const EXPERIENCE: Job[] = [
       "Designed, built, and published a live iOS app on the Apple App Store (SwiftUI + Supabase) — full product ownership from architecture to release, shipped in 4 months using AI-assisted workflows.",
       "Built the ROSCA dApp frontend at ETHOnline 2025 (Next.js, Wagmi, RainbowKit, Safe SDK, Turborepo, Foundry).",
       "Contributed UI improvements to Yearn Finance V3 (open source).",
-      "Co-founded StablePay — crypto payment gateway, MakerDAO Prize winner at ETH San Francisco 2018.",
     ],
   },
   {

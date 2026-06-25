@@ -26,8 +26,9 @@ export default function About() {
 
         <p className="about__summary">
           5+ years building fast, accessible, production-grade web apps for
-          enterprise SaaS clients. I design and scale shared design systems, turn
-          Figma into pixel-perfect interfaces, and ship features end-to-end.
+          enterprise SaaS clients. I design and scale shared design systems,
+          turn Figma into pixel-perfect interfaces, and ship features
+          end-to-end.
         </p>
 
         <div className="about__actions">
@@ -37,10 +38,15 @@ export default function About() {
           <a className="btn btn--ghost" href="#contact">
             Get in Touch
           </a>
-          <a className="about__site" href="https://laitanop.dev">
+          {/* <a
+            className="about__site"
+            href="https://laitanop.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <LanguageRoundedIcon sx={{ fontSize: 16 }} />
             laitanop.dev
-          </a>
+          </a> */}
         </div>
       </div>
 
@@ -53,8 +59,16 @@ export default function About() {
           <span className="about__ring about__ring--3" />
 
           <div className="about__logo-card">
-            <img className="about__fav about__fav--dark" src="/dark-favicon.svg" alt="" />
-            <img className="about__fav about__fav--light" src="/favicion-light.svg" alt="" />
+            <img
+              className="about__fav about__fav--dark"
+              src="/dark-favicon.svg"
+              alt=""
+            />
+            <img
+              className="about__fav about__fav--light"
+              src="/favicion-light.svg"
+              alt=""
+            />
           </div>
 
           <div className="about__chip about__chip--exp">

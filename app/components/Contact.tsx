@@ -25,7 +25,10 @@ export default function Contact() {
         </p>
 
         <div className="contact__actions">
-          <a className="contact-btn contact-btn--primary" href="mailto:laitanop@gmail.com">
+          <a
+            className="contact-btn contact-btn--primary"
+            href="mailto:laitanop@gmail.com"
+          >
             <EmailRoundedIcon sx={{ fontSize: 17 }} />
             Email Me
           </a>
@@ -47,7 +50,7 @@ export default function Contact() {
             <GitHubIcon sx={{ fontSize: 17 }} />
             GitHub
           </a>
-          <a
+          {/* <a
             className="contact-btn contact-btn--purple"
             href="https://laitanop.dev"
             target="_blank"
@@ -55,7 +58,7 @@ export default function Contact() {
           >
             <LanguageRoundedIcon sx={{ fontSize: 17 }} />
             laitanop.dev
-          </a>
+          </a> */}
         </div>
       </div>
     </section>

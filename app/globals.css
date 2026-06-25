@@ -5,6 +5,7 @@
   --dot-color: rgba(237, 249, 255, 0.12);
   --accent: #20c6d4;
   --accent-lo: rgba(32, 198, 212, 0.12);
+  --dot-glow: rgba(32, 198, 212, 0.65);
   --text: #edf9ff;
   --link: #edf9ff94;
   --muted: rgba(237, 249, 255, 0.6);
@@ -27,6 +28,7 @@
   --dot-color: rgba(38, 38, 45, 0.14);
   --accent: #20c6d4;
   --accent-lo: rgba(32, 198, 212, 0.14);
+  --dot-glow: rgba(20, 150, 165, 0.55);
   --text: #26262d;
   --link: #26262d94;
   --muted: rgba(38, 38, 45, 0.62);
@@ -1131,5 +1133,47 @@ body {
 @media (max-width: 640px) {
   .contact__inner {
     padding: 72px 20px 84px;
+  }
+}
+
+/* ---------- Cursor dot spotlight ---------- */
+/* A second, brighter dot grid revealed only in a circle around the cursor.
+   Sits behind page content (z-index:-1), so solid sections cover it and the
+   effect is visible only over the dotted (transparent) sections. */
+.dot-spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    var(--dot-glow) 2px,
+    transparent 2.6px
+  );
+  background-size: 32px 32px;
+  background-position: 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  -webkit-mask-image: radial-gradient(
+    170px circle at var(--mx, -300px) var(--my, -300px),
+    #000 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    transparent 72%
+  );
+  mask-image: radial-gradient(
+    170px circle at var(--mx, -300px) var(--my, -300px),
+    #000 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    transparent 72%
+  );
+}
+
+.dot-spotlight.is-active {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot-spotlight {
+    display: none;
   }
 }
