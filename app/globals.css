@@ -72,8 +72,15 @@ body {
   background-position: 0 0;
   background-attachment: fixed;
   color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 
 /* ---------- Navbar ---------- */
@@ -113,7 +120,9 @@ body {
   color: var(--link);
   font-size: 14px;
   font-weight: 500;
-  transition: color 0.2s, background 0.2s;
+  transition:
+    color 0.2s,
+    background 0.2s;
 }
 
 .navbar__link:hover {
@@ -146,7 +155,9 @@ body {
   border-radius: 50%;
   background: #2c2b34;
   color: #edf9ff;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .navbar__toggle-chevron {
@@ -310,7 +321,10 @@ body {
   font-weight: 600;
   text-decoration: none;
   border: 1px solid transparent;
-  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .btn:hover {
@@ -572,7 +586,10 @@ body {
   border-radius: 16px;
   background: var(--section-card);
   border: 1px solid var(--border);
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .skill-card--accent {
@@ -617,7 +634,9 @@ body {
   font-size: 12px;
   font-weight: 600;
   white-space: nowrap;
-  transition: background 0.18s ease, transform 0.18s ease;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
 }
 
 .skill-tag:hover {
@@ -696,8 +715,10 @@ body {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Alternating tone for the stack pills, mirroring the Skills cards */
@@ -749,7 +770,7 @@ body {
   background-image: repeating-linear-gradient(
     -45deg,
     var(--border) 0,
-    var(--border) 1px,
+    var(--border) 0.1px,
     transparent 1px,
     transparent 11px
   );
@@ -760,7 +781,8 @@ body {
 .project-card__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: top;
 }
 
 .project-card__placeholder {
@@ -792,7 +814,9 @@ body {
 .project-card__arrow {
   flex-shrink: 0;
   color: var(--muted);
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .project-card.is-link:hover .project-card__arrow {
@@ -807,10 +831,40 @@ body {
   color: var(--muted);
 }
 
+.project-card__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .project-card__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.project-card__github {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--section-card);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.project-card__github:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--tone-lo);
 }
 
 .project-tag {
@@ -821,7 +875,9 @@ body {
   color: var(--tone);
   font-size: 12px;
   font-weight: 600;
-  transition: background 0.18s ease, transform 0.18s ease;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
 }
 
 .project-card.is-link:hover .project-tag {
@@ -922,7 +978,9 @@ body {
   height: 14px;
   border-radius: 50%;
   background: var(--tone);
-  box-shadow: 0 0 0 4px var(--section-bg), 0 0 12px var(--tone);
+  box-shadow:
+    0 0 0 4px var(--section-bg),
+    0 0 12px var(--tone);
 }
 
 .exp-card {
@@ -930,7 +988,9 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   padding: 24px 28px 22px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .exp-card:hover {
@@ -1097,7 +1157,10 @@ body {
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 

@@ -1,53 +1,49 @@
+"use client";
+
 import ArrowOutwardRoundedIcon from "@mui/icons-material/ArrowOutwardRounded";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 type Project = {
   title: string;
   description: string;
   stack: string[];
   href?: string;
+  github?: string;
   image?: string;
 };
 
 const PROJECTS: Project[] = [
   {
-    title: "Enterprise SaaS Dashboard",
-    description:
-      "High-performance analytics dashboard for FrankCrum's workforce management platform — real-time data, complex filter states, and fully accessible UI components across distributed Agile teams.",
-    stack: ["React", "TypeScript", "Redux-Saga", "GraphQL"],
-  },
-  {
-    title: "Design System Library",
-    description:
-      "Shared component library scaled across distributed teams at EY — comprehensive Storybook documentation, automated visual regression tests, and a custom theme system.",
-    stack: ["Storybook", "React", "Turborepo", "Next.js"],
-  },
-  {
     title: "Lumera — Dream Interpretation",
     description:
       "Live iOS app on the App Store. Full product ownership from architecture to release, shipping a polished production app in 4 months with AI-assisted workflows.",
-    stack: ["SwiftUI", "SwiftData", "Supabase"],
+    stack: ["SwiftUI", "SwiftData", "Supabase", "openRouter"],
     href: "https://apps.apple.com/cr/app/lumera-dream-interpretation/id6759537468?l=en-GB",
+    image: "/lumera-dream.jpeg",
+  },
+  {
+    title: "Web3 Coffee Support Demo",
+    description:
+      "High-performance analytics dashboard for FrankCrum's workforce management platform — real-time data, complex filter states, and fully accessible UI components across distributed Agile teams.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Tailwindcss",
+      "Wagmi",
+      "Viem",
+      "RainbowKit",
+    ],
+    href: "https://web3buycoffee.laitanop.dev/",
+    github: "https://github.com/laitanop/web3-buy-coffee",
+    image: "/buy-coffeWeb3.svg",
   },
   {
     title: "ROSCA dApp",
     description:
       "Decentralized rotating savings dApp built at ETHOnline 2025 — wallet onboarding, on-chain group savings, and a Foundry-tested contract layer in a Turborepo monorepo.",
     stack: ["Next.js", "Wagmi", "RainbowKit", "Foundry"],
-    href: "https://ethglobal.com/showcase",
-  },
-  {
-    title: "Yearn Finance V3",
-    description:
-      "Open-source UI contributions to Yearn Finance V3 — refined components and interaction states across the DeFi vault interface.",
-    stack: ["React", "TypeScript", "Viem"],
-    href: "https://yearn.fi",
-  },
-  {
-    title: "StablePay",
-    description:
-      "Crypto payment gateway and co-founded project — MakerDAO Prize winner at ETH San Francisco 2018.",
-    stack: ["React", "Ethers.js", "Solidity"],
-    href: "https://github.com/laitanop",
+    href: "https://ethglobal.com/showcase/rosca-dapp-sm9ky",
+    image: "/rosca-dapp.png",
   },
 ];
 
@@ -66,14 +62,15 @@ export default function Projects() {
         <div className="projects__grid">
           {PROJECTS.map((p) => {
             const isLink = Boolean(p.href);
-            const Tag = isLink ? "a" : "div";
             return (
-              <Tag
+              <div
                 key={p.title}
                 className={`project-card${isLink ? " is-link" : ""}`}
-                {...(isLink
-                  ? { href: p.href, target: "_blank", rel: "noreferrer" }
-                  : {})}
+                onClick={
+                  isLink
+                    ? () => window.open(p.href, "_blank", "noreferrer")
+                    : undefined
+                }
               >
                 <div className="project-card__media">
                   {p.image ? (
@@ -96,15 +93,29 @@ export default function Projects() {
                     )}
                   </div>
                   <p className="project-card__desc">{p.description}</p>
-                  <div className="project-card__tags">
-                    {p.stack.map((tech) => (
-                      <span key={tech} className="project-tag">
-                        {tech}
-                      </span>
-                    ))}
+                  <div className="project-card__footer">
+                    <div className="project-card__tags">
+                      {p.stack.map((tech) => (
+                        <span key={tech} className="project-tag">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    {p.github && (
+                      <a
+                        className="project-card__github"
+                        href={p.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="View source on GitHub"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <GitHubIcon sx={{ fontSize: 18 }} />
+                      </a>
+                    )}
                   </div>
                 </div>
-              </Tag>
+              </div>
             );
           })}
         </div>
